@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PoC Envelo</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+  </head>
+  <body>
+    <div class="main-contener">
+      <div class="header">
+        <img
+          src="https://radarevents.pl/wp-content/uploads/2018/11/envelo-logo-1.jpg"
+          alt="Envelo"
+        />
+        <p>
+          Mozesz mieć swoją przesyłkę w kilkanaście sekund.<br />
+          Rozpocznij klikając w przycisk.
+        </p>
+      </div>
+
+      <div id="main">
+        <div id="err"></div>
+        <form id="form" class="form" action="/" method="GET">
+          <input
+            id="number_phone"
+            autocomplete="off"
+            placeholder="Numer telefonu"
+          />
+          <br />
+          <input
+            id="package_code"
+            autocomplete="off"
+            placeholder="Kod odbioru"
+          />
+        </form>
+        <div class="btn">
+          <button id="btn-submit" type="button" class="button4" onclick="togglePopUp()">
+            Odbierz paczkę
+          </button>
+        </div>
+      </div>
+
+      <div class="btn">
+        <button onclick="showContent()" class="button4" id="btn">
+          Odbierz paczkę
+        </button>
+      </div>
+    </div>
+    <div class="popup" id="popup_window">
+      <div class="overlay"></div>
+      <div class="content">
+        <h4>Paczka odebrana!</h4>
+        <p>
+          Zrobiłeś to w czasie <span id="tens"></span> sekund! Czy mozemy coś
+          zrobić dla Ciebie jeszcze?
+        </p>
+        <button class="button4" onclick="showFirstScreen()">
+          To wszystko na dziś
+        </button>
+        <div class="white_space"></div>
+        <button class="button4" id="btn-reset" onclick="showSecondScreen()">
+          Odbierz kolejną paczkę
+        </button>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/timer.js"></script>
+  </body>
+</html>
